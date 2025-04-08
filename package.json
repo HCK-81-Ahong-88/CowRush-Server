@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@google/genai": "^0.7.0",
+    "express": "^5.1.0"
+  }
+}
