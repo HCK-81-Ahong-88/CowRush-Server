@@ -2,7 +2,13 @@ const { Server } = require("socket.io");
 const { Controller } = require("../controllers/controller");
 
 function setupGameSocket(server) {
-    const io = new Server(server);
+    const io = new Server(server, {
+        cors: {
+            origin: "http://localhost:5173", // Ganti dengan URL frontend Anda
+            methods: ["GET", "POST"],
+        },
+    });
+
     let waitingPlayer = null;
     let games = [];
 
