@@ -1,0 +1,11 @@
+const app = require("../app");
+const http = require("http");
+const setupGameSocket = require("../services/gameSocket");
+
+const server = http.createServer(app);
+
+setupGameSocket(server);
+
+server.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is running on port ${ process.env.PORT || 3000 }`);
+});
